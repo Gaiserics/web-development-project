@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #666;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+    <a href="#home" id="home-link">Home</a>
+    <a href="#about" id="about-link">About</a>
+    <a href="#contact" id="contact-link">Contact</a>
+</nav>
+
+<section id="home" class="page">
+    <h2>Home</h2>
+    <p>This is the homepage of my website.</p>
+</section>
+
+<section id="about" class="page hidden">
+    <h2>About</h2>
+    <p>This is the about page of my website.</p>
+</section>
+
+<section id="contact" class="page hidden">
+    <h2>Contact</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+    // Function to toggle between pages
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(page => {
+            if (page.id === pageId) {
+                page.classList.remove('hidden');
+            } else {
+                page.classList.add('hidden');
+            }
+        });
+    }
+
+    // Event listeners for navigation links
+    document.getElementById('home-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        showPage('home');
+    });
+
+    document.getElementById('about-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        showPage('about');
+    });
+
+    document.getElementById('contact-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        showPage('contact');
+    });
+
+    // Form validation
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let name = document.getElementById('name').value.trim();
+        let email = document.getElementById('email').value.trim();
+        let message = document.getElementById('message').value.trim();
+
+        if (name === '' || email === '' || message === '') {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Additional validation logic can be added here
+
+        // Form submission logic (dummy for demonstration)
+        alert('Form submitted successfully!');
+        document.getElementById('contact-form').reset();
+    });
+</script>
+
+</body>
+</html>
