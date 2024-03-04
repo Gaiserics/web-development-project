@@ -5,10 +5,15 @@ body {
     padding: 0;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 nav ul {
@@ -26,8 +31,25 @@ nav ul li a {
     text-decoration: none;
 }
 
-section {
+.hero {
+    background-color: #f2f2f2;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.features {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    margin: 0 2%;
     padding: 20px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    text-align: left;
 }
 
 /* Page-Specific Styles */
