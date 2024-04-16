@@ -7,7 +7,7 @@ const port = 3000;
 // Parse URL-encoded bodies for form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files (like HTML, CSS, and images)
+// Serve static files 
 app.use(express.static('public'));
 
 // Handle form submission
