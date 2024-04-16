@@ -19,9 +19,8 @@ app.post('/submit-form', (req, res) => {
         return res.status(400).send('Please fill in all fields.');
     }
 
-    // Additional validation logic can be added here
 
-    // Dummy response
+    // Response
     res.status(200).send('Form submitted successfully!');
 });
 
